@@ -158,7 +158,7 @@ function paragrafOlustur(cumleler,cumleKur,cumlelereDonustur) {
   let result2 = cumleKur(result[1],result[3],result[5],result[7],result[9]);
   return result2
 }
-//console.log(paragrafOlustur(cumleler,cumleKur,cumlelereDonustur))
+ //console.log(paragrafOlustur(cumleler,cumleKur,cumlelereDonustur))
 /* 	GÖREV 3:
 		Yukarıda isimleri sebzeler ve meyveler olan 2 dizi bulunmaktadır. Bu dizileri kullanarak aşağıdaki görevleri tamamlayın.
 			3a. meyveler dizisinin ilk ve son elemanlarını diziden çıkartın. (.pop ve .shift metodlarını kullanın)
@@ -166,7 +166,7 @@ function paragrafOlustur(cumleler,cumleKur,cumlelereDonustur) {
   //3a çözümü
       meyveler.pop(meyveler.length)
       meyveler.shift(0)
-      //console.log(meyveler)
+      console.log(meyveler)
 
 /* 			3b.  Bir tavşan ve bir kirpi arkadaşlar sebzeler dizimizin peşine düştü. Tavşan => 🐇 , Kirpi=> 🦔 , 
 Tavşanla kirpi sebzeleri ele geçirmek için bir plan kurdular. Tavşan diziye önden saldıracak, kirpi ise 
@@ -185,7 +185,7 @@ elemanlara denk gelecek şekilde, iki diziyi birleştirip sonucu manav dizisine 
 
 var manav;
 manav = meyveler.concat(sebzeler)
-
+console.log(manav)
 /* 	GÖREV 4:
 		Yeni kurulmuş bir mesajlaşma startup firması atılan mesajları emojilerle zenginleştirmek istiyor. 
     Bunun için emojiler adında bir nesne tanımlamışlar. Kullanıcının gönderdiği mesaj stringi içinde 
@@ -203,14 +203,14 @@ manav = meyveler.concat(sebzeler)
 			4. elde edilen string döndürülecek
  */
     
-      function emojileriDonustur(mesaj,emojiler) {
-    //     for (i = 0; i < emojiler.length; i++){
-    //       if(mesaj.includes(Object.keys[i])){ mesaj.replaceAll(Object.keys(emojiler)[i],Object.values(emojiler)[i])}
-    //   }
-    // return mesaj
-  }
-  let mesaj = "Selam :) Nasılsın :D Bugünkü olay çok komikti :p ama sonra çok şaşırdık :O biraz da üzüldük :( ama yine de seviliyorsun <3";
-  //console.log(emojileriDonustur(mesaj,emojiler))
+      function emojileriDonustur(mesaj,emojis) {
+        for(let key in emojis) {
+         mesaj = mesaj.replaceAll(key.toLowerCase(),emojis[key]);
+         mesaj = mesaj.replaceAll(key.toUpperCase(),emojis[key])
+        }
+        return mesaj
+      }
+      //console.log (emojileriDonustur("Selam :) Nasılsın :D Bugünkü olay çok komikti :p ama sonra çok şaşırdık :O biraz da üzüldük :( ama yine de seviliyorsun <3",emojiler))
 
 
 /*  Bu satırın aşağısındaki kodları lütfen değiştirmeyin  */
